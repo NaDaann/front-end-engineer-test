@@ -14,6 +14,25 @@ O departamento de TI da GDM reflete a cultura colaborativa da empresa. Somos um 
 
 Nosso front-end é desenvolvido com **React.js** e **Next.js**, garantindo interfaces de alta performance. No backend, utilizamos principalmente **Node.js** e **NestJS** junto com uma robusta infraestrutura em nuvem na **AWS**.
 
+## Requisitos Técnicos 😁
+
+### Ferramentas e Tecnologias Obrigatórias
+
+- **Next.js/TypeScript 15**: Utilização da versão 15 do Next.js, incluindo Server e Client Components.
+- **Hooks do React**: Extensivo uso de hooks como `useState`, `useMemo`, `useRef`, `useEffect`, `useContext`, `useCallback`, entre outros.
+- **Styled Components ou TailwindCSS**: Escolher uma das bibliotecas css-in-js para estilização consistente e eficiente.
+- **Gerenciamento de Estado**: Utilização da **Context API** ou uma biblioteca adicional para controle de dados.
+- **API Fetch**: Consumo de dados externos utilizando a **Web Fetch API** para consultas dinâmicas.
+- **Biblioteca de Animação**: Utilização de **framer-motion** ou outras bibliotecas para animações e manipulação de elementos.
+- **Lodash**: Para ordenação e manipulação de listas.
+- **Proteção de Rotas**: Middleware para proteger e gerenciar o acesso a rotas específicas.
+- **SSR (Server-Side Rendering)**: SSR para busca de dados e otimização do carregamento inicial.
+- **Componentização**: Boas práticas na criação e separação de **Client** e **Server Components**.
+
+### Funcionalidades Opcionais
+
+- **Next API BFF (Backend for Frontend)**: Utilização da API do Next.js para criar um Backend for Frontend, facilitando chamadas de API e processamento de dados.
+
 ## Descrição do Desafio 📰
 
 O objetivo deste desafio é desenvolver uma **Plataforma de Visualização de Apostas Esportivas** usando **Next.js** e **TypeScript**. A aplicação terá uma interface interativa e organizada, com foco em UX/UI para facilitar a navegação do usuário.
@@ -41,25 +60,6 @@ A aplicação deve permitir que os usuários visualizem apostas esportivas onlin
 - Página dedicada à visualização detalhada de uma odd específica.
 - Exposição de todas as informações relevantes da odd escolhida.
 
-## Requisitos Técnicos 😁
-
-### Ferramentas e Tecnologias Obrigatórias
-
-- **Next.js/TypeScript 15**: Utilização da versão 15 do Next.js, incluindo Server e Client Components.
-- **Hooks do React**: Extensivo uso de hooks como `useState`, `useMemo`, `useRef`, `useEffect`, `useContext`, `useCallback`, entre outros.
-- **Styled Components ou TailwindCSS**: Escolher uma das bibliotecas css-in-js para estilização consistente e eficiente.
-- **Gerenciamento de Estado**: Utilização da **Context API** ou uma biblioteca adicional para controle de dados.
-- **API Fetch**: Consumo de dados externos utilizando a **Web Fetch API** para consultas dinâmicas.
-- **Biblioteca de Animação**: Utilização de **framer-motion** ou outras bibliotecas para animações e manipulação de elementos.
-- **Lodash**: Para ordenação e manipulação de listas.
-- **Proteção de Rotas**: Middleware para proteger e gerenciar o acesso a rotas específicas.
-- **SSR (Server-Side Rendering)**: SSR para busca de dados e otimização do carregamento inicial.
-- **Componentização**: Boas práticas na criação e separação de **Client** e **Server Components**.
-
-### Funcionalidades Opcionais
-
-- **Next API BFF (Backend for Frontend)**: Utilização da API do Next.js para criar um Backend for Frontend, facilitando chamadas de API e processamento de dados.
-
 ### Deploy
 
 - **Repositório Público**: A aplicação deverá estar em um repositório público no GitHub ou outra plataforma de versionamento.
@@ -76,6 +76,14 @@ A aplicação deve permitir que os usuários visualizem apostas esportivas onlin
 ## Desafio Extra: User Flow de Primeiro Acesso
 
 Criar um fluxo de onboarding para novos usuários, fornecendo uma visão geral sobre como utilizar a plataforma. Esse fluxo deve orientar o usuário passo a passo, explicando as principais funcionalidades e como personalizar a experiência.
+
+## Critérios de Avaliação 📊
+
+- Implementação precisa do controle de acesso e roles.
+- Clareza e organização na estrutura do código e arquitetura.
+- Integração correta com a API para exibição de métricas.
+- Boa usabilidade e organização da interface do usuário.
+- Onde sua criatividade conseguir te levar.
 
 ## Próximos Passos
 
