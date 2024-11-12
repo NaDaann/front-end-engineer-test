@@ -85,6 +85,12 @@ Criar um fluxo de onboarding para novos usuários, fornecendo uma visão geral s
 - Boa usabilidade e organização da interface do usuário.
 - Onde sua criatividade conseguir te levar.
 
+## Referências de interfaces
+
+- https://oddsscanner.com/br/
+- https://oddspedia.com/br/odds
+- https://www.oddsview.com/odds
+
 ## Próximos Passos
 
 Envie o link da aplicação e do repositório para nosso time de recrutamento em [vagas@gdigitalmkt.com].
