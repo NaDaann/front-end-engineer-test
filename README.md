@@ -91,6 +91,12 @@ Criar um fluxo de onboarding para novos usuários, fornecendo uma visão geral s
 - https://oddspedia.com/br/odds
 - https://www.oddsview.com/odds
 
+## Sportbooks API's
+
+- https://sportsbookapi.com/sportsbooks/
+- https://rapidapi.com/collection/sports-odds-betting-apis
+- https://the-odds-api.com/
+
 ## Próximos Passos
 
 Envie o link da aplicação e do repositório para nosso time de recrutamento em [vagas@gdigitalmkt.com].
