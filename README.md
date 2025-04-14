@@ -1,4 +1,4 @@
-# Desafio Desenvolvedor Front-End Pleno 👩‍💻
+# Desafio Desenvolvedor Front-End 👩‍💻
 
 Agradecemos seu interesse em se tornar parte da nossa equipe!
 
@@ -25,7 +25,7 @@ Nosso front-end é desenvolvido com **React.js** e **Next.js**, garantindo inter
 - **API Fetch**: Consumo de dados externos utilizando a **Web Fetch API** para consultas dinâmicas.
 - **Biblioteca de Animação**: Utilização de **framer-motion** ou outras bibliotecas para animações e manipulação de elementos.
 - **Lodash**: Para ordenação e manipulação de listas.
-- **Proteção de Rotas**: Middleware para proteger e gerenciar o acesso a rotas específicas.
+- **Autenticação**: Middleware para proteger e gerenciar o acesso a rotas específicas.
 - **SSR (Server-Side Rendering)**: SSR para busca de dados e otimização do carregamento inicial.
 - **Componentização**: Boas práticas na criação e separação de **Client** e **Server Components**.
 
@@ -70,7 +70,6 @@ A aplicação deve permitir que os usuários visualizem apostas esportivas onlin
 - **Drag & Drop**: Aplicação eficiente e intuitiva para reorganização de elementos.
 - **Configuração de ESLint e Prettier**: Definir regras de código e formatação para garantir padronização.
 - **Testes Automatizados**: Criação de testes para os componentes principais, visando maior cobertura e estabilidade.
-- **Docker**: Adição de `Dockerfile` e `docker-compose.yml` para configuração e execução da aplicação em ambientes isolados.
 - **Otimização de SEO**: Implementação de práticas de SEO para melhorar a indexação e o desempenho em motores de busca.
 
 ## Desafio Extra: User Flow de Primeiro Acesso
