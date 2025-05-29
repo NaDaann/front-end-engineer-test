@@ -15,11 +15,8 @@ export function MatchesFilters({
 }: MatchesFiltersProps) {
     return (
         <MatchesFiltersContainer>
-            <MatchesFiltersSearch
-                searchTerm={searchTerm}
-                onSearchChange={onSearchChange}
-            />
-            
+            <MatchesFiltersSearch searchTerm={searchTerm} onSearchChange={onSearchChange} />
+
             <MatchesFiltersButtons
                 selectedSport={selectedSport}
                 onSportChange={onSportChange}

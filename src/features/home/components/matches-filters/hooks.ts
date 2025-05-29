@@ -5,18 +5,18 @@ import { FILTER_BUTTON_CONFIGS } from './config';
 
 export function useFilterButtons(
     sports: Sport[],
-    favoriteCategories: string[]
+    favoriteCategories: string[],
 ): FilterButtonConfig[] {
     return useMemo(() => {
-        const baseButtons: FilterButtonConfig[] = [
-            FILTER_BUTTON_CONFIGS.all,
-            {
-                ...FILTER_BUTTON_CONFIGS.favorites,
-                disabled: favoriteCategories.length === 0,
-            },
-        ];
+        const baseButtons: FilterButtonConfig[] = [FILTER_BUTTON_CONFIGS.all];
 
-        const sportButtons: FilterButtonConfig[] = sports.map((sport) => ({
+        // Only include favorites button if there are favorite categories
+        if (favoriteCategories && favoriteCategories.length > 0) {
+            baseButtons.push(FILTER_BUTTON_CONFIGS.favorites);
+        }
+
+        // Handle null/undefined sports array
+        const sportButtons: FilterButtonConfig[] = (sports || []).map((sport) => ({
             id: sport.id,
             type: 'sport' as const,
             label: `${sport.icon} ${sport.name}`,

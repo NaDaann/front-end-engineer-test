@@ -60,14 +60,15 @@ global.URLSearchParams = class URLSearchParams {
 
 jest.mock('framer-motion', () => ({
     motion: {
-        div: ({ children, ...props }) => <div {...props}>{children}</div>,
-        button: ({ children, ...props }) => <button {...props}>{children}</button>,
-        span: ({ children, ...props }) => <span {...props}>{children}</span>,
-        h1: ({ children, ...props }) => <h1 {...props}>{children}</h1>,
-        h2: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
-        h3: ({ children, ...props }) => <h3 {...props}>{children}</h3>,
-        p: ({ children, ...props }) => <p {...props}>{children}</p>,
-        img: ({ children, ...props }) => <img {...props}>{children}</img>,
+        div: 'div',
+        button: 'button',
+        span: 'span',
+        h1: 'h1',
+        h2: 'h2',
+        h3: 'h3',
+        p: 'p',
+        img: 'img',
+        section: 'section',
     },
     AnimatePresence: ({ children }) => children,
     useAnimation: () => ({
@@ -138,15 +139,68 @@ jest.mock('next/navigation', () => ({
 }));
 
 jest.mock('next-auth/react', () => ({
-    useSession: () => ({
+    useSession: jest.fn(() => ({
         data: null,
         status: 'loading',
-    }),
+    })),
     signIn: jest.fn(),
     signOut: jest.fn(),
 }));
 
 jest.mock('lodash/debounce', () => (fn) => fn);
+
+// Mock clsx and tailwind-merge first
+jest.mock('clsx', () => ({
+    clsx: jest.fn((...args) => args.filter(Boolean).join(' ')),
+    __esModule: true,
+    default: jest.fn((...args) => args.filter(Boolean).join(' ')),
+}));
+
+jest.mock('tailwind-merge', () => ({
+    twMerge: jest.fn((classNames) => classNames),
+    __esModule: true,
+    default: jest.fn((classNames) => classNames),
+}));
+
+// Mock the cn utility function and other utils - Use both relative and absolute paths
+jest.mock('@/lib/utils', () => ({
+    cn: jest.fn((...args) => {
+        // Simple implementation that just joins all class names
+        return args.filter(Boolean).join(' ');
+    }),
+    formatOdds: jest.fn((odds) => odds.toFixed(2)),
+    formatDate: jest.fn(() => '01/01/2024 10:00'),
+    formatCurrency: jest.fn((amount) => `R$ ${amount.toFixed(2)}`),
+    getUserFirstName: jest.fn((name) => (name ? name.split(' ')[0] : '')),
+    debounce: jest.fn((fn) => fn),
+    generateSlug: jest.fn((text) => text.toLowerCase().replace(/\s+/g, '-')),
+    prefersDarkMode: jest.fn(() => false),
+}));
+
+jest.mock('@/lib/utils/index', () => ({
+    cn: jest.fn((...args) => {
+        // Simple implementation that just joins all class names
+        return args.filter(Boolean).join(' ');
+    }),
+    formatOdds: jest.fn((odds) => odds.toFixed(2)),
+    formatDate: jest.fn(() => '01/01/2024 10:00'),
+    formatCurrency: jest.fn((amount) => `R$ ${amount.toFixed(2)}`),
+    getUserFirstName: jest.fn((name) => (name ? name.split(' ')[0] : '')),
+    debounce: jest.fn((fn) => fn),
+    generateSlug: jest.fn((text) => text.toLowerCase().replace(/\s+/g, '-')),
+    prefersDarkMode: jest.fn(() => false),
+}));
+
+// Mock lucide-react icons
+jest.mock('lucide-react', () => ({
+    Search: () => 'SearchIcon',
+    TrendingUp: () => 'TrendingUpIcon',
+    HelpCircle: () => 'HelpCircleIcon',
+    Clock: () => 'ClockIcon',
+    MapPin: () => 'MapPinIcon',
+    Star: () => 'StarIcon',
+    Heart: () => 'HeartIcon',
+}));
 
 Object.defineProperty(window, 'matchMedia', {
     writable: true,

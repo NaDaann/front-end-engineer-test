@@ -17,26 +17,21 @@ import { useOnboardingProgress } from '../../hooks/use-onboarding-progress';
 export function OnboardingModal({ isOpen, onClose, onComplete }: OnboardingModalProps) {
     const [currentStep, setCurrentStep] = useState(0);
     const { getProgressPercentage } = useOnboardingProgress();
-    
+
     const steps = createOnboardingSteps(getProgressPercentage);
-    
-    const {
-        handleNext,
-        handlePrevious,
-        handleClose,
-        handleStepJump
-    } = useOnboardingNavigation(
+
+    const { handleNext, handlePrevious, handleClose, handleStepJump } = useOnboardingNavigation(
         currentStep,
         setCurrentStep,
         steps.length,
         onComplete,
-        onClose
+        onClose,
     );
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (!isOpen) return;
-            
+
             switch (event.key) {
                 case 'ArrowRight':
                 case 'Enter':
@@ -85,14 +80,11 @@ export function OnboardingModal({ isOpen, onClose, onComplete }: OnboardingModal
                         totalSteps={steps.length}
                         onClose={handleClose}
                     />
-                    
+
                     <OnboardingContent step={currentStepData} />
-                    
-                    <OnboardingProgress
-                        currentStep={currentStep}
-                        totalSteps={steps.length}
-                    />
-                    
+
+                    <OnboardingProgress currentStep={currentStep} totalSteps={steps.length} />
+
                     <OnboardingNavigation
                         currentStep={currentStep}
                         totalSteps={steps.length}

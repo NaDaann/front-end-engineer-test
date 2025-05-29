@@ -48,11 +48,9 @@ const INITIAL_PROGRESS: OnboardingProgress = {
 };
 
 export function useOnboardingProgress(): UseOnboardingProgressReturn {
-    const { value: localProgress, setValue: setLocalProgress } = useLocalStorage<OnboardingProgress>(
-        'onboarding_progress',
-        INITIAL_PROGRESS
-    );
-    
+    const { value: localProgress, setValue: setLocalProgress } =
+        useLocalStorage<OnboardingProgress>('onboarding_progress', INITIAL_PROGRESS);
+
     const [progress, setProgress] = useState<OnboardingProgress>(localProgress);
 
     // Sync with localStorage
@@ -61,7 +59,7 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
     }, [progress, setLocalProgress]);
 
     const markStepCompleted = useCallback((stepId: number) => {
-        setProgress(prev => ({
+        setProgress((prev) => ({
             ...prev,
             currentStep: stepId,
             stats: {
@@ -72,10 +70,10 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
     }, []);
 
     const recordStepTime = useCallback((stepId: number, timeSpent: number) => {
-        setProgress(prev => {
+        setProgress((prev) => {
             const newStepTimes = [...prev.stats.stepTimes];
             newStepTimes[stepId] = timeSpent;
-            
+
             return {
                 ...prev,
                 stats: {
@@ -88,7 +86,7 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
 
     const markCompleted = useCallback(() => {
         const now = Date.now();
-        setProgress(prev => ({
+        setProgress((prev) => ({
             ...prev,
             isCompleted: true,
             hasSeenBefore: true,
@@ -113,7 +111,7 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
     }, [progress.hasSeenBefore, progress.stats.restartCount]);
 
     const incrementSkip = useCallback(() => {
-        setProgress(prev => ({
+        setProgress((prev) => ({
             ...prev,
             stats: {
                 ...prev.stats,
@@ -123,7 +121,7 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
     }, []);
 
     const incrementRestart = useCallback(() => {
-        setProgress(prev => ({
+        setProgress((prev) => ({
             ...prev,
             stats: {
                 ...prev.stats,
@@ -133,7 +131,7 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
     }, []);
 
     const getAverageStepTime = useCallback(() => {
-        const validTimes = progress.stats.stepTimes.filter(time => time > 0);
+        const validTimes = progress.stats.stepTimes.filter((time) => time > 0);
         if (validTimes.length === 0) return 0;
         return validTimes.reduce((sum, time) => sum + time, 0) / validTimes.length;
     }, [progress.stats.stepTimes]);
@@ -146,7 +144,7 @@ export function useOnboardingProgress(): UseOnboardingProgressReturn {
     // Initialize start time on first load
     useEffect(() => {
         if (progress.stats.startTime === 0) {
-            setProgress(prev => ({
+            setProgress((prev) => ({
                 ...prev,
                 stats: {
                     ...prev.stats,

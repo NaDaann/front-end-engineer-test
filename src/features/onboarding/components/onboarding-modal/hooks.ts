@@ -7,25 +7,21 @@ export function useOnboardingNavigation(
     setCurrentStep: (step: number) => void,
     stepsLength: number,
     onComplete: () => void,
-    onClose: () => void
+    onClose: () => void,
 ) {
     const [stepStartTime, setStepStartTime] = useState(Date.now());
-    
+
     const { playStepSound, playSuccessSound, playClickSound, vibrate } = useOnboardingEffects();
-    const { 
-        markStepCompleted, 
-        recordStepTime, 
-        markCompleted 
-    } = useOnboardingProgress();
+    const { markStepCompleted, recordStepTime, markCompleted } = useOnboardingProgress();
 
     const handleNext = useCallback(() => {
         const timeSpent = Date.now() - stepStartTime;
         recordStepTime(currentStep, timeSpent);
         markStepCompleted(currentStep);
-        
+
         playClickSound();
         vibrate(50);
-        
+
         if (currentStep < stepsLength - 1) {
             setCurrentStep(currentStep + 1);
             setStepStartTime(Date.now());
@@ -36,7 +32,20 @@ export function useOnboardingNavigation(
             vibrate([100, 50, 100]);
             onComplete();
         }
-    }, [currentStep, stepStartTime, stepsLength, setCurrentStep, onComplete, recordStepTime, markStepCompleted, markCompleted, playClickSound, playStepSound, playSuccessSound, vibrate]);
+    }, [
+        currentStep,
+        stepStartTime,
+        stepsLength,
+        setCurrentStep,
+        onComplete,
+        recordStepTime,
+        markStepCompleted,
+        markCompleted,
+        playClickSound,
+        playStepSound,
+        playSuccessSound,
+        vibrate,
+    ]);
 
     const handlePrevious = useCallback(() => {
         if (currentStep > 0) {
@@ -50,18 +59,21 @@ export function useOnboardingNavigation(
     const handleClose = useCallback(() => {
         const timeSpent = Date.now() - stepStartTime;
         recordStepTime(currentStep, timeSpent);
-        
+
         playClickSound();
         onClose();
     }, [currentStep, stepStartTime, recordStepTime, playClickSound, onClose]);
 
-    const handleStepJump = useCallback((stepNumber: number) => {
-        if (stepNumber >= 0 && stepNumber < stepsLength) {
-            playClickSound();
-            setCurrentStep(stepNumber);
-            setStepStartTime(Date.now());
-        }
-    }, [stepsLength, setCurrentStep, playClickSound]);
+    const handleStepJump = useCallback(
+        (stepNumber: number) => {
+            if (stepNumber >= 0 && stepNumber < stepsLength) {
+                playClickSound();
+                setCurrentStep(stepNumber);
+                setStepStartTime(Date.now());
+            }
+        },
+        [stepsLength, setCurrentStep, playClickSound],
+    );
 
     return {
         handleNext,
@@ -69,6 +81,6 @@ export function useOnboardingNavigation(
         handleClose,
         handleStepJump,
         stepStartTime,
-        setStepStartTime
+        setStepStartTime,
     };
 }

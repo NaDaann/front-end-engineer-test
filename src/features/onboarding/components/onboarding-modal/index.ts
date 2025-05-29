@@ -16,5 +16,5 @@ export type {
     OnboardingNavigationProps,
     OnboardingProgressProps,
     OnboardingOverlayProps,
-    OnboardingContainerProps
+    OnboardingContainerProps,
 } from './types';

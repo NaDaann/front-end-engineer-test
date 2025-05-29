@@ -35,18 +35,16 @@ export function SportsList({ sports, favoriteCategories }: SportsListProps) {
     const [activeId, setActiveId] = React.useState<string | null>(null);
     const [mounted, setMounted] = useState(false);
 
-    // Aguardar hidratação para evitar erros de SSR
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    // Configurações otimizadas para sensores com melhor responsividade
     const sensors = useSensors(
         useSensor(PointerSensor, {
             activationConstraint: {
-                distance: 5, // Menor distância para ativação mais rápida
+                distance: 5,
                 tolerance: 5,
-                delay: 0, // Sem delay para resposta imediata
+                delay: 0,
             },
         }),
         useSensor(KeyboardSensor, {
@@ -86,7 +84,6 @@ export function SportsList({ sports, favoriteCategories }: SportsListProps) {
         [favoriteCategories, addFavoriteCategory, removeFavoriteCategory],
     );
 
-    // Memoizar itens para evitar re-renders desnecessários
     const itemIds = useMemo(() => orderedSports.map((item) => item.id), [orderedSports]);
 
     const activeItem = useMemo(
@@ -128,7 +125,7 @@ export function SportsList({ sports, favoriteCategories }: SportsListProps) {
                                 <SportCategoryCard
                                     sport={activeItem}
                                     isFavorite={favoriteCategories.includes(activeItem.id)}
-                                    onToggleFavorite={() => {}} // Não funcional durante drag
+                                    onToggleFavorite={handleToggleFavorite}
                                     isDragging={true}
                                 />
                             ) : null}

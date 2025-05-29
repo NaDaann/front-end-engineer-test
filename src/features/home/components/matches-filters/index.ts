@@ -5,9 +5,7 @@ export { MatchesFiltersSearch } from './matches-filters-search';
 export { MatchesFiltersButtons } from './matches-filters-buttons';
 export { MatchesFilterButton } from './matches-filter-button';
 
-export {
-    useFilterButtons,
-} from './hooks';
+export { useFilterButtons } from './hooks';
 
 export type {
     MatchesFiltersProps,
@@ -19,8 +17,4 @@ export type {
     FilterButtonConfig,
 } from './types';
 
-export {
-    MATCHES_FILTERS_DEFAULTS,
-    FILTER_BUTTON_STYLES,
-    FILTER_BUTTON_CONFIGS,
-} from './config';
+export { MATCHES_FILTERS_DEFAULTS, FILTER_BUTTON_STYLES, FILTER_BUTTON_CONFIGS } from './config';

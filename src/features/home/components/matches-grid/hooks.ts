@@ -8,10 +8,10 @@ export interface UseMatchesGridProps {
     favoriteCategories: string[];
 }
 
-export function useMatchesGrid({ 
-    matches, 
-    selectedSport, 
-    favoriteCategories 
+export function useMatchesGrid({
+    matches,
+    selectedSport,
+    favoriteCategories,
 }: UseMatchesGridProps) {
     const emptyStateMessage = useMemo(() => {
         if (selectedSport === 'favorites' && favoriteCategories.length === 0) {

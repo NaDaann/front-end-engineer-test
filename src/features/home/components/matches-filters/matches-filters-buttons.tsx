@@ -17,7 +17,7 @@ export function MatchesFiltersButtons({
             {filterButtons.map((button) => {
                 const variant = selectedSport === button.id ? 'default' : 'outline';
                 const showStarIcon = button.id === 'favorites';
-                
+
                 return (
                     <MatchesFilterButton
                         key={button.id}

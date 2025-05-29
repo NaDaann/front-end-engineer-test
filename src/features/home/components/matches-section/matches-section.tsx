@@ -19,20 +19,22 @@ export function MatchesSection({
 }: MatchesSectionProps) {
     return (
         <MatchesSectionContainer variants={itemVariants}>
-            <MatchesSectionHeader />
-            
-            <MatchesSectionContent
-                searchTerm={searchTerm}
-                onSearchChange={onSearchChange}
-                selectedSport={selectedSport}
-                onSportChange={onSportChange}
-                sports={sports}
-                matches={matches}
-                matchesLoading={matchesLoading}
-                favoriteCategories={favoriteCategories}
-                itemVariants={itemVariants}
-                containerVariants={containerVariants}
-            />
+            {MatchesSectionHeader && <MatchesSectionHeader />}
+
+            {MatchesSectionContent && (
+                <MatchesSectionContent
+                    searchTerm={searchTerm}
+                    onSearchChange={onSearchChange}
+                    selectedSport={selectedSport}
+                    onSportChange={onSportChange}
+                    sports={sports}
+                    matches={matches}
+                    matchesLoading={matchesLoading}
+                    favoriteCategories={favoriteCategories}
+                    itemVariants={itemVariants}
+                    containerVariants={containerVariants}
+                />
+            )}
         </MatchesSectionContainer>
     );
 }

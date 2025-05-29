@@ -8,14 +8,23 @@ export function MatchesFiltersSearch({
     onSearchChange,
     placeholder = MATCHES_FILTERS_DEFAULTS.placeholder,
 }: MatchesFiltersSearchProps) {
+    const handleChange = (value: string) => {
+        try {
+            onSearchChange(value);
+        } catch (error) {
+            console.error('Error in search change handler:', error);
+        }
+    };
+
     return (
         <div className={FILTER_BUTTON_STYLES.searchContainer}>
             <div className={FILTER_BUTTON_STYLES.searchInputContainer}>
                 <Search className={FILTER_BUTTON_STYLES.searchIcon} />
                 <Input
+                    type="text"
                     placeholder={placeholder}
                     value={searchTerm}
-                    onChange={(e) => onSearchChange(e.target.value)}
+                    onChange={(e) => handleChange(e.target.value)}
                     className={FILTER_BUTTON_STYLES.searchInput}
                 />
             </div>

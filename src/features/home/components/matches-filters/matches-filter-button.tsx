@@ -9,12 +9,7 @@ export function MatchesFilterButton({
     children,
 }: MatchesFilterButtonProps) {
     return (
-        <Button
-            variant={variant}
-            size={size}
-            onClick={onClick}
-            disabled={disabled}
-        >
+        <Button variant={variant} size={size} onClick={onClick} disabled={disabled}>
             {children}
         </Button>
     );

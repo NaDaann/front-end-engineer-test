@@ -27,10 +27,8 @@ export function useOddsPage(): UseOddsPage {
 
     const [accumulatedOdds, setAccumulatedOdds] = useState<OddWithMatch[]>([]);
 
-    // Debounce search term
     const debouncedSearchTerm = useDebounce(state.filters.searchTerm, 600);
 
-    // Preparar filtros para a API
     const apiFilters: UseOddsFilters = useMemo(
         () => ({
             search: debouncedSearchTerm || undefined,

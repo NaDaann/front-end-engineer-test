@@ -5,13 +5,13 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { OnboardingNavigationProps } from './types';
 
-export function OnboardingNavigation({ 
-    currentStep, 
-    totalSteps, 
-    step, 
-    onNext, 
-    onPrevious, 
-    onComplete 
+export function OnboardingNavigation({
+    currentStep,
+    totalSteps,
+    step,
+    onNext,
+    onPrevious,
+    onComplete,
 }: OnboardingNavigationProps) {
     const isLastStep = currentStep === totalSteps - 1;
     const isFirstStep = currentStep === 0;
@@ -39,9 +39,7 @@ export function OnboardingNavigation({
             </Button>
 
             <div className="flex items-center space-x-2">
-                <span className="text-xs text-gray-500">
-                    Use ←→ ou números para navegar
-                </span>
+                <span className="text-xs text-gray-500">Use ←→ ou números para navegar</span>
             </div>
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>

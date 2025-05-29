@@ -17,12 +17,6 @@ export {
     useLeagueRelatedOdds,
 } from './use-related-odds-specialized';
 
-export {
-    useRelatedOddsQueryParams,
-    filtersToQueryParams,
-} from './use-related-odds-query-params';
+export { useRelatedOddsQueryParams, filtersToQueryParams } from './use-related-odds-query-params';
 
-export {
-    formatRelationshipTypes,
-    categorizeRelatedOdds,
-} from './use-related-odds-utils';
+export { formatRelationshipTypes, categorizeRelatedOdds } from './use-related-odds-utils';

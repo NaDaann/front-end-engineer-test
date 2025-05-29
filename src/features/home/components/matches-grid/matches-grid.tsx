@@ -29,20 +29,16 @@ export function MatchesGrid({
         return (
             <MatchesGridContainer containerVariants={containerVariants}>
                 {matches.map((match) => (
-                    <MatchesGridItem 
-                        key={match.id} 
-                        match={match} 
-                        itemVariants={itemVariants} 
-                    />
+                    <MatchesGridItem key={match.id} match={match} itemVariants={itemVariants} />
                 ))}
             </MatchesGridContainer>
         );
     }
 
     return (
-        <MatchesGridEmptyState 
-            selectedSport={selectedSport} 
-            favoriteCategories={favoriteCategories} 
+        <MatchesGridEmptyState
+            selectedSport={selectedSport}
+            favoriteCategories={favoriteCategories}
         />
     );
 }

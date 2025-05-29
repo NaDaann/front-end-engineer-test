@@ -7,10 +7,10 @@ const DEFAULT_STORAGE_KEY = 'sports-order';
 
 export function useSportsOrderData(options: UseSportsOrderOptions = {}): SportsOrderData {
     const { storageKey = DEFAULT_STORAGE_KEY } = options;
-    
+
     const { value: storedOrder, setValue: setStoredOrder } = useLocalStorage<string[]>(
         storageKey,
-        []
+        [],
     );
 
     return {

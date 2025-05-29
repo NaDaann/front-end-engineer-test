@@ -8,7 +8,7 @@ import { getSortedSports, extractSportsOrder, hasCustomOrder } from './use-sport
 
 export function useSportsOrder(
     initialSports: Sport[],
-    options: UseSportsOrderOptions = {}
+    options: UseSportsOrderOptions = {},
 ): UseSportsOrderReturn {
     const { enabled = true } = options;
     const { storedOrder, setStoredOrder } = useSportsOrderData(options);
@@ -16,22 +16,22 @@ export function useSportsOrder(
     const reorderSports = useCallback(
         (newSports: Sport[]) => {
             if (!enabled) return;
-            
+
             const newOrder = extractSportsOrder(newSports);
             setStoredOrder(newOrder);
         },
-        [enabled, setStoredOrder]
+        [enabled, setStoredOrder],
     );
 
     const resetOrder = useCallback(() => {
         if (!enabled) return;
-        
+
         setStoredOrder([]);
     }, [enabled, setStoredOrder]);
 
     const orderedSports = useMemo(() => {
         if (!enabled) return initialSports;
-        
+
         return getSortedSports(initialSports, storedOrder);
     }, [enabled, initialSports, storedOrder]);
 

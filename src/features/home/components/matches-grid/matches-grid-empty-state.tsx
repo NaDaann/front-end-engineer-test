@@ -5,9 +5,9 @@ import { Clock } from 'lucide-react';
 import { MatchesGridEmptyStateProps } from './types';
 import { useMatchesGrid } from './hooks';
 
-export function MatchesGridEmptyState({ 
-    selectedSport, 
-    favoriteCategories 
+export function MatchesGridEmptyState({
+    selectedSport,
+    favoriteCategories,
 }: MatchesGridEmptyStateProps) {
     const { emptyStateMessage } = useMatchesGrid({
         matches: [],
@@ -19,9 +19,7 @@ export function MatchesGridEmptyState({
         <Card>
             <CardContent className="p-8 text-center">
                 <Clock className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600">
-                    {emptyStateMessage}
-                </p>
+                <p className="text-gray-600">{emptyStateMessage}</p>
             </CardContent>
         </Card>
     );

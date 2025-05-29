@@ -4,11 +4,7 @@ export { WelcomeSectionContainer } from './welcome-section-container';
 export { WelcomeSectionHeader } from './welcome-section-header';
 export { WelcomeSectionContent } from './welcome-section-content';
 
-export {
-    useWelcomeSectionHeader,
-    useUserDisplayName,
-    useWelcomeMessage,
-} from './hooks';
+export { useWelcomeSectionHeader, useUserDisplayName, useWelcomeMessage } from './hooks';
 
 export type {
     WelcomeSectionProps,
@@ -17,7 +13,4 @@ export type {
     WelcomeSectionContentProps,
 } from './types';
 
-export {
-    WELCOME_SECTION_DEFAULTS,
-    WELCOME_SECTION_STYLES,
-} from './config';
+export { WELCOME_SECTION_DEFAULTS, WELCOME_SECTION_STYLES } from './config';

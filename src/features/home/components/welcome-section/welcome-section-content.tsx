@@ -6,7 +6,7 @@ import { HelpCircle } from 'lucide-react';
 import { WelcomeSectionContentProps } from './types';
 import { WELCOME_SECTION_DEFAULTS, WELCOME_SECTION_STYLES } from './config';
 
-export function WelcomeSectionContent({ 
+export function WelcomeSectionContent({
     onTutorialClick,
     buttonText = WELCOME_SECTION_DEFAULTS.buttonText,
     showTutorialButton = WELCOME_SECTION_DEFAULTS.showTutorialButton,

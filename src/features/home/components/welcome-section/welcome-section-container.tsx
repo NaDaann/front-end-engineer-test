@@ -8,9 +8,7 @@ import { WELCOME_SECTION_STYLES } from './config';
 export function WelcomeSectionContainer({ children, variants }: WelcomeSectionContainerProps) {
     return (
         <motion.div variants={variants}>
-            <Card className={WELCOME_SECTION_STYLES.container}>
-                {children}
-            </Card>
+            <Card className={WELCOME_SECTION_STYLES.container}>{children}</Card>
         </motion.div>
     );
 }

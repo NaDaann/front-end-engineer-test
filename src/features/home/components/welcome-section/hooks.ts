@@ -6,13 +6,16 @@ import { WELCOME_SECTION_DEFAULTS } from './config';
 export function useWelcomeSectionHeader(
     userName?: string,
     customTitle?: string,
-    customSubtitle?: string
+    customSubtitle?: string,
 ): WelcomeSectionHeaderProps {
-    return useMemo(() => ({
-        userName,
-        title: customTitle ?? WELCOME_SECTION_DEFAULTS.title,
-        subtitle: customSubtitle ?? WELCOME_SECTION_DEFAULTS.subtitle,
-    }), [userName, customTitle, customSubtitle]);
+    return useMemo(
+        () => ({
+            userName,
+            title: customTitle ?? WELCOME_SECTION_DEFAULTS.title,
+            subtitle: customSubtitle ?? WELCOME_SECTION_DEFAULTS.subtitle,
+        }),
+        [userName, customTitle, customSubtitle],
+    );
 }
 
 export function useUserDisplayName(userName?: string): string {

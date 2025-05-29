@@ -11,7 +11,7 @@ export function useRelatedOddsData(
 ) {
     const { enabled = true } = options;
     const params = useRelatedOddsQueryParams(filters);
-    
+
     const isEnabled = enabled && !!oddId;
 
     return useApi<RelatedOddsResponse>(`/odds/${oddId}/related`, {

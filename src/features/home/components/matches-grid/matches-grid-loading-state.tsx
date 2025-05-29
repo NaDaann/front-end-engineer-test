@@ -6,6 +6,6 @@ import { MATCHES_GRID_CONFIG } from './config';
 
 export function MatchesGridLoadingState({ count }: MatchesGridLoadingStateProps) {
     const loadingCount = count ?? MATCHES_GRID_CONFIG.loading.defaultCount;
-    
+
     return <LoadingState type="matches" count={loadingCount} />;
 }

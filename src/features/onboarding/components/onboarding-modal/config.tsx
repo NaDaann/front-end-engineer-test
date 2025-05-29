@@ -51,7 +51,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         className="absolute -inset-2 border-2 border-dashed border-emerald-400/30 rounded-full"
                     />
                 </motion.div>
-                
+
                 <div className="space-y-3">
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -59,11 +59,16 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         transition={{ delay: 0.4 }}
                         className="text-muted-foreground text-lg"
                     >
-                        Descubra as <span className="text-emerald-400 font-semibold">melhores odds</span>, organize suas 
-                        <span className="text-green-400 font-semibold"> categorias favoritas</span> e explore o
-                        mundo das apostas esportivas de forma intuitiva.
+                        Descubra as{' '}
+                        <span className="text-emerald-400 font-semibold">melhores odds</span>,
+                        organize suas
+                        <span className="text-green-400 font-semibold">
+                            {' '}
+                            categorias favoritas
+                        </span>{' '}
+                        e explore o mundo das apostas esportivas de forma intuitiva.
                     </motion.p>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +76,9 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         className="flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/20 rounded-lg p-3"
                     >
                         <Sparkles className="w-5 h-5 text-emerald-400" />
-                        <span className="text-sm font-medium">Experiência profissional em apostas</span>
+                        <span className="text-sm font-medium">
+                            Experiência profissional em apostas
+                        </span>
                         <Sparkles className="w-5 h-5 text-green-400" />
                     </motion.div>
                 </div>
@@ -101,9 +108,11 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                                 Categorias, jogos e suas odds favoritas
                             </p>
                         </div>
-                        <Badge className="bg-green-500/20 text-green-400 border-green-500/30">Principal</Badge>
+                        <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
+                            Principal
+                        </Badge>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ x: -20, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -119,10 +128,12 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                                 Análise detalhada de todas as apostas
                             </p>
                         </div>
-                        <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Principal</Badge>
+                        <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+                            Principal
+                        </Badge>
                     </motion.div>
                 </div>
-                
+
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -157,20 +168,23 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                     >
                         <Star className="w-6 h-6 text-yellow-400 fill-current" />
                     </motion.div>
-                    
+
                     <div className="flex items-start space-x-3">
                         <div className="p-2 bg-yellow-500/20 rounded-lg">
                             <Target className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                            <p className="font-semibold text-yellow-400 mb-1">Marcar como Favorito</p>
+                            <p className="font-semibold text-yellow-400 mb-1">
+                                Marcar como Favorito
+                            </p>
                             <p className="text-sm text-muted-foreground">
-                                Clique na <Star className="w-4 h-4 inline mx-1 text-yellow-400" /> dos cards de esportes para 
-                                adicioná-los aos seus favoritos e ter acesso rápido.
+                                Clique na <Star className="w-4 h-4 inline mx-1 text-yellow-400" />{' '}
+                                dos cards de esportes para adicioná-los aos seus favoritos e ter
+                                acesso rápido.
                             </p>
                         </div>
                     </div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -191,7 +205,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         </Badge>
                     </motion.div>
                 </motion.div>
-                
+
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -200,7 +214,9 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                 >
                     <div className="flex items-center space-x-2">
                         <Filter className="w-4 h-4 text-green-400" />
-                        <span className="text-sm font-medium text-green-400">Filtragem Inteligente</span>
+                        <span className="text-sm font-medium text-green-400">
+                            Filtragem Inteligente
+                        </span>
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">
                         Use o filtro &quot;Favoritos&quot; para ver apenas suas categorias marcadas
@@ -226,15 +242,17 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                             <ArrowUpDown className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                            <p className="font-semibold text-green-400 mb-1">Reorganização Dinâmica</p>
+                            <p className="font-semibold text-green-400 mb-1">
+                                Reorganização Dinâmica
+                            </p>
                             <p className="text-sm text-muted-foreground">
-                                Clique e arraste os cards de categorias para reorganizá-los conforme sua 
-                                preferência. A ordem é salva automaticamente.
+                                Clique e arraste os cards de categorias para reorganizá-los conforme
+                                sua preferência. A ordem é salva automaticamente.
                             </p>
                         </div>
                     </div>
                 </motion.div>
-                
+
                 <div className="space-y-3">
                     <motion.div
                         animate={{ x: [0, 10, 0] }}
@@ -259,7 +277,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                             <Move className="w-6 h-6 text-green-400" />
                         </motion.div>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -297,13 +315,13 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         <div>
                             <p className="font-semibold text-emerald-400 mb-1">Análise Profunda</p>
                             <p className="text-sm text-muted-foreground">
-                                Clique em qualquer odd para ver análise completa, histórico de variação,
-                                odds relacionadas e indicadores de &quot;Hot Odds&quot;.
+                                Clique em qualquer odd para ver análise completa, histórico de
+                                variação, odds relacionadas e indicadores de &quot;Hot Odds&quot;.
                             </p>
                         </div>
                     </div>
                 </motion.div>
-                
+
                 <div className="space-y-3">
                     <motion.div
                         initial={{ scale: 0.9 }}
@@ -334,7 +352,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                             <Zap className="w-3 h-3 text-yellow-400 mx-auto mt-1" />
                         </motion.div>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -342,7 +360,9 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         className="flex items-center justify-center space-x-2 p-2 bg-purple-500/5 border border-purple-500/20 rounded-lg"
                     >
                         <BarChart3 className="w-4 h-4 text-purple-400" />
-                        <span className="text-xs text-purple-400 font-medium">Hot Odds detectadas automaticamente</span>
+                        <span className="text-xs text-purple-400 font-medium">
+                            Hot Odds detectadas automaticamente
+                        </span>
                     </motion.div>
                 </div>
             </div>
@@ -373,7 +393,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         </div>
                     </div>
                 </motion.div>
-                
+
                 <div className="space-y-3">
                     <motion.div
                         initial={{ x: -20, opacity: 0 }}
@@ -381,23 +401,38 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         transition={{ delay: 0.2 }}
                         className="flex gap-2 flex-wrap"
                     >
-                        <Button size="sm" variant="outline" className="border-gray-600 hover:border-purple-500">
+                        <Button
+                            size="sm"
+                            variant="outline"
+                            className="border-gray-600 hover:border-purple-500"
+                        >
                             Todos
                         </Button>
-                        <Button size="sm" className="border-yellow-500 bg-yellow-500/60  hover:bg-black/70">
+                        <Button
+                            size="sm"
+                            className="border-yellow-500 bg-yellow-500/60  hover:bg-black/70"
+                        >
                             <Star className="w-3 h-3 mr-1" />
                             Favoritos
                         </Button>
-                        <Button size="sm" variant="outline" className="border-gray-600 hover:border-emerald-500">
+                        <Button
+                            size="sm"
+                            variant="outline"
+                            className="border-gray-600 hover:border-emerald-500"
+                        >
                             <CirclePlay className="w-3 h-3 mr-1" />
                             Futebol
                         </Button>
-                        <Button size="sm" variant="outline" className="border-gray-600 hover:border-green-500">
+                        <Button
+                            size="sm"
+                            variant="outline"
+                            className="border-gray-600 hover:border-green-500"
+                        >
                             <CirclePlay className="w-3 h-3 mr-1" />
                             Basquete
                         </Button>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -435,7 +470,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         <p className="text-sm font-semibold text-orange-400">Hot Odds</p>
                         <p className="text-xs text-muted-foreground">Detecção automática</p>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ scale: 0, rotateY: 90 }}
                         animate={{ scale: 1, rotateY: 0 }}
@@ -446,7 +481,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         <p className="text-sm font-semibold text-emerald-400">Analytics</p>
                         <p className="text-xs text-muted-foreground">Histórico detalhado</p>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ scale: 0, rotateY: -90 }}
                         animate={{ scale: 1, rotateY: 0 }}
@@ -457,7 +492,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         <p className="text-sm font-semibold text-green-400">Precisão</p>
                         <p className="text-xs text-muted-foreground">Odds em tempo real</p>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ scale: 0, rotateY: 90 }}
                         animate={{ scale: 1, rotateY: 0 }}
@@ -469,7 +504,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         <p className="text-xs text-muted-foreground">Interface adaptável</p>
                     </motion.div>
                 </div>
-                
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -481,7 +516,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                         <span className="font-semibold text-indigo-400">Experiência Premium</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                        Todos os recursos foram desenvolvidos pensando na experiência profissional 
+                        Todos os recursos foram desenvolvidos pensando na experiência profissional
                         de apostadores experientes.
                     </p>
                 </motion.div>
@@ -501,14 +536,12 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                     transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
                     className="relative mx-auto w-24 h-24"
                 >
-                    <div
-                        className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-500/60 to-orange-500/60 animate-pulse"
-                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-500/60 to-orange-500/60 animate-pulse" />
                     <div className="absolute inset-2 bg-gray-900 rounded-full flex items-center justify-center">
                         <Trophy className="w-8 h-8 text-yellow-400" />
                     </div>
                 </motion.div>
-                
+
                 <div className="space-y-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -522,7 +555,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                             Você conheceu todas as funcionalidades principais do Daniel Gaming!
                         </p>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -543,7 +576,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                                 <span className="text-xs text-purple-400">Análises</span>
                             </div>
                         </div>
-                        
+
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -567,7 +600,7 @@ export const createOnboardingSteps = (getProgressPercentage: () => number): Onbo
                                 />
                             </div>
                         </motion.div>
-                        
+
                         <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}

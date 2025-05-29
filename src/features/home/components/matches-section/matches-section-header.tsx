@@ -4,7 +4,7 @@ import { TrendingUp } from 'lucide-react';
 import { MatchesSectionHeaderProps } from './types';
 import { MATCHES_SECTION_DEFAULTS, MATCHES_SECTION_STYLES } from './config';
 
-export function MatchesSectionHeader({ 
+export function MatchesSectionHeader({
     title = MATCHES_SECTION_DEFAULTS.title,
     showStatus = MATCHES_SECTION_DEFAULTS.showStatus,
     statusText = MATCHES_SECTION_DEFAULTS.statusText,
@@ -15,9 +15,7 @@ export function MatchesSectionHeader({
             {showStatus && (
                 <div className={MATCHES_SECTION_STYLES.header.status.wrapper}>
                     <TrendingUp className={MATCHES_SECTION_STYLES.header.status.icon} />
-                    <span className={MATCHES_SECTION_STYLES.header.status.text}>
-                        {statusText}
-                    </span>
+                    <span className={MATCHES_SECTION_STYLES.header.status.text}>{statusText}</span>
                 </div>
             )}
         </div>

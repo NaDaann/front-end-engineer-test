@@ -20,12 +20,12 @@ export function OnboardingContainer({ children }: OnboardingContainerProps) {
                             'radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
                             'radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 70%)',
                             'radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 70%)',
-                        ]
+                        ],
                     }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                     className="absolute inset-0 rounded-xl -z-10"
                 />
-                
+
                 {children}
             </motion.div>
         </div>
