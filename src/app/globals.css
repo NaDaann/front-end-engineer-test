@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    color-scheme: light dark;
+}
+
+:root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #0a0a0a;
+    --card-foreground: #ededed;
+    --popover: #0a0a0a;
+    --popover-foreground: #ededed;
+    --primary: #1b793f;
+    --primary-foreground: #ffffff;
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #1b793f;
+
+    --white: #ffffff;
+    --red: #940101;
+}
+
+body {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    min-height: 100vh;
+}
+
+* {
+    border-color: var(--border);
+    transition: border-color 0.3s ease;
+}
+
+/* Ensure all text inherits the correct color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button {
+    color: inherit !important;
+}
+
+.text-foreground {
+    color: var(--foreground) !important;
+}
+
+.text-muted-foreground {
+    color: var(--muted-foreground) !important;
+}
+
+.text-color-white {
+    color: var(--white) !important;
+}
+
+.bg-background {
+    background-color: var(--background) !important;
+}
+
+.bg-card {
+    background-color: var(--card) !important;
+}
+
+/* Custom scrollbar with theme support */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--muted);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--foreground);
+}
+
+.transition-theme {
+    transition: all 0.3s ease-in-out;
+}
+
+.card,
+.button,
+.input,
+.badge {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Dark mode shadow optimizations */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) img {
+        opacity: 0.9;
+    }
+
+    :root:not(.light):not(.dark) .shadow-sm {
+        box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+    }
+    :root:not(.light):not(.dark) .shadow {
+        box-shadow:
+            0 1px 3px 0 rgba(255, 255, 255, 0.1),
+            0 1px 2px -1px rgba(255, 255, 255, 0.1);
+    }
+    :root:not(.light):not(.dark) .shadow-md {
+        box-shadow:
+            0 4px 6px -1px rgba(255, 255, 255, 0.1),
+            0 2px 4px -2px rgba(255, 255, 255, 0.1);
+    }
+    :root:not(.light):not(.dark) .shadow-lg {
+        box-shadow:
+            0 10px 15px -3px rgba(255, 255, 255, 0.1),
+            0 4px 6px -4px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Forced dark mode optimizations */
+html.dark img {
+    opacity: 0.9;
+}
+
+html.dark .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.05) !important;
+}
+html.dark .shadow {
+    box-shadow:
+        0 1px 3px 0 rgba(255, 255, 255, 0.1),
+        0 1px 2px -1px rgba(255, 255, 255, 0.1) !important;
+}
+html.dark .shadow-md {
+    box-shadow:
+        0 4px 6px -1px rgba(255, 255, 255, 0.1),
+        0 2px 4px -2px rgba(255, 255, 255, 0.1) !important;
+}
+html.dark .shadow-lg {
+    box-shadow:
+        0 10px 15px -3px rgba(255, 255, 255, 0.1),
+        0 4px 6px -4px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Forced light mode optimizations */
+html.light img {
+    opacity: 1;
+}
+
+html.light .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+html.light .shadow {
+    box-shadow:
+        0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+}
+html.light .shadow-md {
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+html.light .shadow-lg {
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Custom animation delays for loading indicators */
+.animation-delay-75 {
+    animation-delay: 75ms;
+}
+
+.animation-delay-150 {
+    animation-delay: 150ms;
+}
+
+.animation-delay-300 {
+    animation-delay: 300ms;
+}
+
+/* Enhanced loading animations */
+@keyframes pulse-slow {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#sign-out-button:hover {
+    background-color: var(--red) !important;
+    color: var(--white) !important;
+}
